@@ -1,0 +1,15 @@
+{% extends "tasks/layout.html" %}
+{% block body %}
+    <h1>Tasks</h1>
+    <ul>
+        {% for item in tasks %}
+            <li>{{item}}</li>
+        {% empty %}
+            <li>No tasks.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'tasks:add' %}"> Add Task</a>
+{% endblock %}
+
+<!-- empty is a special condition inside a for loop that specifies
+     if we run a for loop and it doesn't run because is empty, then do something  -->
